@@ -1,4 +1,4 @@
-import BlogArticles from "../features/BlogArticles";
+import BlogArticles from "../features/articles/BlogArticles";
 import Heading from "../ui/Heading";
 
 function Blog() {
