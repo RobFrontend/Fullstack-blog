@@ -32,7 +32,14 @@ const Img = styled.img`
 `;
 
 function BlogItem({ article }) {
-  const { id: artticleID, title, articleText, publisher, image } = article;
+  const {
+    id: artticleID,
+    title,
+    articleText,
+    publisher,
+    image,
+    created_at: date,
+  } = article;
 
   return (
     <Article>
@@ -43,6 +50,7 @@ function BlogItem({ article }) {
         <Img src={image} />
       </Grid2Cols>
       <Heading as="h3">Publishing: {publisher}</Heading>
+      <p>{date.slice(0, 10)}</p>
     </Article>
   );
 }
