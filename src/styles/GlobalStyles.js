@@ -28,9 +28,13 @@ const GlobalStyles = createGlobalStyle`
 
 
 }
-
 html {
   font-size: 62.5%;
+}
+@media  (max-width: 35em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -69,7 +73,7 @@ label,
 input {
   font-size: 1.8rem;
   text-transform: capitalize;
-  
+
 }
 
 p,

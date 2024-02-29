@@ -28,6 +28,9 @@ const Grid2Cols = styled.div`
   grid-template-columns: 80fr 20fr;
   gap: 2.4rem;
   align-items: center;
+  @media (max-width: 50em) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Img = styled.img`
@@ -35,6 +38,9 @@ const Img = styled.img`
   border-radius: var(--border-radius-sm);
   &:hover {
     border-radius: var(--border-radius-lg);
+  }
+  @media (max-width: 50em) {
+    display: none;
   }
 `;
 

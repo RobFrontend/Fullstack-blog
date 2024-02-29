@@ -13,6 +13,10 @@ const ArticlesTable = styled.div`
   padding: 1.8rem;
   justify-content: center;
   align-items: center;
+  @media (max-width: 50em) {
+    column-gap: 0.8rem;
+    padding: 0.8rem;
+  }
 `;
 
 export const IMG = styled.img`
