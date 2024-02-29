@@ -16,6 +16,13 @@ const RevText = styled.p`
   margin: 1.8rem;
 `;
 
+const PostTime = styled.span`
+  font-size: 1.2rem;
+  text-align: right;
+  opacity: 0.4;
+  font-weight: 500;
+`;
+
 const Grid2Cols = styled.div`
   display: grid;
   grid-template-columns: 80fr 20fr;
@@ -42,15 +49,24 @@ function BlogItem({ article }) {
   } = article;
 
   return (
-    <Article>
+    <Article
+      style={{
+        background: `linear-gradient(to bottom right, rgb(221, 222, 223), rgb(221, 222, 223), rgba(221, 222, 223, 0.7)), url(${image})`,
+        backgroundSize: `cover`,
+        backgroundPosition: "center",
+        backdropFilter: "blur(5px)",
+      }}
+    >
       <Heading as="h2">{title}</Heading>
       <Grid2Cols>
         <RevText>{articleText}</RevText>
 
         <Img src={image} />
       </Grid2Cols>
-      <Heading as="h3">Publishing: {publisher}</Heading>
-      <p>{date.slice(0, 10)}</p>
+      <Grid2Cols>
+        <Heading as="h3">Publishing: {publisher}</Heading>
+        <PostTime>{date.slice(0, 10)}</PostTime>
+      </Grid2Cols>
     </Article>
   );
 }

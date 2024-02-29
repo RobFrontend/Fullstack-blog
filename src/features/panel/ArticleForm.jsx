@@ -4,8 +4,6 @@ import FileInput from "../../ui/FileInput";
 import { useCreateArticle } from "./useCreateArticle";
 import { useForm } from "react-hook-form";
 import FormRow from "../../ui/FormRow";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { CreateArticle } from "../../services/apiArticles";
 
 const StyledForm = styled.form`
   display: grid;
@@ -15,6 +13,8 @@ const StyledForm = styled.form`
 `;
 
 function ArticleForm() {
+  const { isCreating, createArticle } = useCreateArticle();
+
   const {
     register,
     handleSubmit,
@@ -24,24 +24,12 @@ function ArticleForm() {
   } = useForm({
     defaultValues: null,
   });
-  // const { createArticle, isCreating } = useCreateArticle();
-
-  const queryClient = useQueryClient();
-  const { mutate: createArticle, isLoading: isCreating } = useMutation({
-    mutationFn: CreateArticle,
-    onSuccess: () => {
-      alert("Article created");
-      queryClient.invalidateQueries({
-        queryKey: ["articles"],
-      });
-    },
-    onError: (err) => {
-      alert(err.message);
-    },
-  });
 
   function onSubmit(data) {
-    createArticle({ ...data, image: data.image[0] });
+    createArticle(
+      { ...data, image: data.image[0] },
+      { onSuccess: (data) => reset() }
+    );
   }
 
   return (
@@ -54,7 +42,7 @@ function ArticleForm() {
           <input
             type="text"
             id="title"
-            placeholder="title"
+            placeholder="title..."
             {...register("title")}
           />
         </FormRow>
@@ -63,7 +51,7 @@ function ArticleForm() {
           <textarea
             type="text"
             id="articleText"
-            placeholder="text"
+            placeholder="text..."
             {...register("articleText")}
           />
         </FormRow>
@@ -72,7 +60,7 @@ function ArticleForm() {
           <input
             type="text"
             id="publisher"
-            placeholder="publisher"
+            placeholder="publisher..."
             {...register("publisher")}
           />
         </FormRow>

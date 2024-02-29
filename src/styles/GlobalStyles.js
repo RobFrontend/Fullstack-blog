@@ -24,7 +24,9 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: background-color 0.5s, box-shadow 0.5s, color 0.5s, border-radius .5s, opacity 0.5s;;
+  transition: background-color 0.5s, box-shadow 0.5s, color 0.5s, border-radius .5s, opacity 0.5s;
+
+
 }
 
 html {
@@ -37,7 +39,7 @@ body {
   background-color: var(--color-body-background);
 }
 
-
+label,
 input,
 button,
 textarea,
@@ -61,6 +63,13 @@ a {
 
 ul {
   list-style: none;
+}
+textarea,
+label,
+input {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  
 }
 
 p,

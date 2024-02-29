@@ -11,7 +11,7 @@ export async function getArticles() {
   return data;
 }
 
-export async function CreateArticle(newArticle, id) {
+export async function createArticleAPI(newArticle, id) {
   const imageName = `${Math.random()}-${newArticle.image.name}`.replaceAll(
     "/",
     ""

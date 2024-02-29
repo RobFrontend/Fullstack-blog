@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { CreateArticle } from "../../services/apiArticles";
+import { createArticleAPI } from "../../services/apiArticles";
 
 export function useCreateArticle() {
   const queryClient = useQueryClient();
-  const { mutate: createArticle, isLoading: isCreating } = useMutation({
-    mutationFn: CreateArticle,
+  const { mutate: createArticle, isPending: isCreating } = useMutation({
+    mutationFn: createArticleAPI,
     onSuccess: () => {
       alert("Article created");
       queryClient.invalidateQueries({
@@ -15,5 +15,5 @@ export function useCreateArticle() {
       alert(err.message);
     },
   });
-  return { createArticle, isCreating };
+  return { isCreating, createArticle };
 }

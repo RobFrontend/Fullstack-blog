@@ -16,12 +16,12 @@ function Panel() {
   }
   return (
     <StyledPanel>
-      <ArticlesList />
       <Button size="large" variation="primary" onClick={handleOpen}>
         {isOpen ? "Close form" : "Add Article"}
       </Button>
 
       {isOpen ? <ArticleForm /> : null}
+      <ArticlesList />
     </StyledPanel>
   );
 }

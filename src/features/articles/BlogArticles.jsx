@@ -11,7 +11,6 @@ const ArticleBox = styled.div`
 
 function BlogArticles() {
   const { isLoading, articles } = useArticles();
-  console.log(articles);
 
   if (isLoading) return <h1>Loading</h1>;
   return (
