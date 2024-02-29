@@ -14,6 +14,7 @@ const RevText = styled.p`
   line-height: 1.4;
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 1.8rem;
+  text-align: justify;
 `;
 
 const PostTime = styled.span`
