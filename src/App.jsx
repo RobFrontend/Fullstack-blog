@@ -6,6 +6,7 @@ import Panel from "./pages/Panel";
 import PageNotFount from "./pages/PageNotFount";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,6 +27,7 @@ function App() {
             <Route index element={<Navigate replace to="blog" />} />
             <Route path="blog" element={<Blog />} />
             <Route path="panel" element={<Panel />} />
+            <Route path="login" element={<Login />} />
           </Route>
           <Route path="*" element={<PageNotFount />} />
         </Routes>
