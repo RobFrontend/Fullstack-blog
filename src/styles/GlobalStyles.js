@@ -72,6 +72,9 @@ textarea,
 label,
 input {
   font-size: 1.8rem;
+  
+}
+label{
   text-transform: capitalize;
 
 }
