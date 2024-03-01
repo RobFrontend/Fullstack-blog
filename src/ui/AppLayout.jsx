@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
+import Headroom from "react-headroom";
 
 const StyledAppLayout = styled.div`
-  height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  /* height: 100vh; */
+  /* display: grid; */
+  /* grid-template-rows: auto 1fr; */
 `;
 
 const Main = styled.main`
@@ -23,7 +24,9 @@ const Container = styled.div`
 function AppLayout() {
   return (
     <StyledAppLayout>
-      <Header />
+      <Headroom>
+        <Header />
+      </Headroom>
       <Main>
         <Container>
           <Outlet />
