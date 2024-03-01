@@ -76,7 +76,7 @@ function BlogItem({ article }) {
           <Grid2Cols>
             <RevText>{articleText}</RevText>
 
-            <Img src={image} />
+            <Img src={image} alt="book cover photo" />
           </Grid2Cols>
           <Grid2Cols>
             <Heading as="h3">Publishing: {publisher}</Heading>

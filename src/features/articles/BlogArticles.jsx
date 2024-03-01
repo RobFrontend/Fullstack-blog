@@ -2,7 +2,6 @@ import styled from "styled-components";
 import BlogItem from "./BlogItem";
 
 import { useArticles } from "./useArticles";
-import { Fade } from "react-awesome-reveal";
 
 const ArticleBox = styled.div`
   padding: 6.4rem 1.8rem;
