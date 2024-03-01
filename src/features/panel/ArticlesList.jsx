@@ -6,14 +6,17 @@ import { AttentionSeeker } from "react-awesome-reveal";
 const StyledList = styled.div``;
 
 const ArticlesTable = styled.div`
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-lg);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 1.8rem;
   row-gap: 3.2rem;
-  border-bottom: 1px solid var(--color-hover);
+  box-shadow: var(--shadow-md);
   padding: 1.8rem;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   @media (max-width: 50em) {
     column-gap: 0.8rem;
     padding: 0.8rem;

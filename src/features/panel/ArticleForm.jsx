@@ -10,6 +10,8 @@ const StyledForm = styled.form`
   gap: 2.4rem;
   grid-template-columns: 1fr;
   padding: 3.2rem;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-lg);
 `;
 
 function ArticleForm() {
@@ -34,8 +36,6 @@ function ArticleForm() {
 
   return (
     <>
-      <h2>Create Article Form</h2>
-
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <FormRow>
           <label htmlFor="title">title</label>

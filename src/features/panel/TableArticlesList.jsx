@@ -2,7 +2,7 @@ import MediaQuery from "react-responsive";
 import Button from "../../ui/Button";
 import { IMG } from "./ArticlesList";
 import { useDeleteArticle } from "./useDeleteArticle";
-import { AttentionSeeker } from "react-awesome-reveal";
+import { AttentionSeeker, Zoom } from "react-awesome-reveal";
 
 function TableArticlesList({ article }) {
   const { isDeleting, deleteArticle } = useDeleteArticle();
@@ -21,7 +21,9 @@ function TableArticlesList({ article }) {
       <AttentionSeeker triggerOnce>
         <p>{article.publisher}</p>
       </AttentionSeeker>
-      <IMG src={article.image} alt="image book" />
+      <AttentionSeeker triggerOnce>
+        <IMG src={article.image} alt="image book" />
+      </AttentionSeeker>
       <MediaQuery minWidth={768}>
         <Button
           size="small"
