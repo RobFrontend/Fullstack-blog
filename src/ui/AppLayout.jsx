@@ -11,7 +11,7 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   height: auto;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 `;
 
 const Container = styled.div`
