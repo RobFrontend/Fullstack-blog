@@ -4,6 +4,21 @@ import FormRow from "../ui/FormRow";
 import { useLogin } from "../features/login/useLogin";
 import { useUser } from "../features/login/useUser";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const LoginDiv = styled.div`
+  padding: 3.2rem;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius-lg);
+`;
+
+const Form = styled.form`
+  display: grid;
+`;
+const LoginButton = styled(Button)`
+  text-align: center;
+`;
 
 function Login({ isLogged, setIsLogged }) {
   const navigate = useNavigate();
@@ -24,8 +39,8 @@ function Login({ isLogged, setIsLogged }) {
     [isAuthenticated, navigate]
   );
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <LoginDiv>
+      <Form onSubmit={handleSubmit}>
         <FormRow>
           <label>E-mail</label>
           <input
@@ -46,11 +61,11 @@ function Login({ isLogged, setIsLogged }) {
             disabled={isLogin}
           />
         </FormRow>
-        <Button size="large" variation="primary" disabled={isLogin}>
+        <LoginButton size="large" variation="primary" disabled={isLogin}>
           Login
-        </Button>
-      </form>
-    </div>
+        </LoginButton>
+      </Form>
+    </LoginDiv>
   );
 }
 

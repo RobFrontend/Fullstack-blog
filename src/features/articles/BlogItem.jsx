@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Heading from "../../ui/Heading";
+import { Fade } from "react-awesome-reveal";
 
 const Article = styled.div`
   display: grid;
@@ -61,27 +62,29 @@ function BlogItem({ article }) {
   } = article;
 
   return (
-    <Blured
-      style={{
-        background: `linear-gradient(to bottom right, rgb(221, 222, 223), rgb(221, 222, 223), rgba(221, 222, 223, 0.5)), url(${image})`,
-        backgroundSize: `cover`,
-        backgroundPosition: "center",
-        backdropFilter: "blur(5px)",
-      }}
-    >
-      <Article>
-        <Heading as="h2">{title}</Heading>
-        <Grid2Cols>
-          <RevText>{articleText}</RevText>
+    <Fade triggerOnce direction="up">
+      <Blured
+        style={{
+          background: `linear-gradient(to bottom right, rgb(221, 222, 223), rgb(221, 222, 223), rgba(221, 222, 223, 0.5)), url(${image})`,
+          backgroundSize: `cover`,
+          backgroundPosition: "center",
+          backdropFilter: "blur(5px)",
+        }}
+      >
+        <Article>
+          <Heading as="h2">{title}</Heading>
+          <Grid2Cols>
+            <RevText>{articleText}</RevText>
 
-          <Img src={image} />
-        </Grid2Cols>
-        <Grid2Cols>
-          <Heading as="h3">Publishing: {publisher}</Heading>
-          <PostTime>{date.slice(0, 10)}</PostTime>
-        </Grid2Cols>
-      </Article>
-    </Blured>
+            <Img src={image} />
+          </Grid2Cols>
+          <Grid2Cols>
+            <Heading as="h3">Publishing: {publisher}</Heading>
+            <PostTime>{date.slice(0, 10)}</PostTime>
+          </Grid2Cols>
+        </Article>
+      </Blured>
+    </Fade>
   );
 }
 

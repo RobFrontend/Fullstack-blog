@@ -19,9 +19,7 @@ function BlogArticles() {
       {articles
         .sort((a, b) => b.id - a.id)
         .map((article) => (
-          <Fade triggerOnce direction="up">
-            <BlogItem article={article} key={article.id} />
-          </Fade>
+          <BlogItem article={article} key={article.id} />
         ))}
     </ArticleBox>
   );
