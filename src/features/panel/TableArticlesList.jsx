@@ -2,18 +2,25 @@ import MediaQuery from "react-responsive";
 import Button from "../../ui/Button";
 import { IMG } from "./ArticlesList";
 import { useDeleteArticle } from "./useDeleteArticle";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 function TableArticlesList({ article }) {
   const { isDeleting, deleteArticle } = useDeleteArticle();
   return (
     <>
-      <p>{article.title}</p>
-      <p>
-        {article.articleText
-          .slice(0, 100)
-          .replaceAll(article.articleText.slice(97, 100), "...")}
-      </p>
-      <p>{article.publisher}</p>
+      <AttentionSeeker triggerOnce>
+        <p>{article.title}</p>
+      </AttentionSeeker>
+      <AttentionSeeker triggerOnce>
+        <p>
+          {article.articleText
+            .slice(0, 100)
+            .replaceAll(article.articleText.slice(97, 100), "...")}
+        </p>
+      </AttentionSeeker>
+      <AttentionSeeker triggerOnce>
+        <p>{article.publisher}</p>
+      </AttentionSeeker>
       <IMG src={article.image} alt="image book" />
       <MediaQuery minWidth={768}>
         <Button

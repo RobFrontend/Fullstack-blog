@@ -2,6 +2,7 @@ import styled from "styled-components";
 import BlogItem from "./BlogItem";
 
 import { useArticles } from "./useArticles";
+import { Fade } from "react-awesome-reveal";
 
 const ArticleBox = styled.div`
   padding: 6.4rem 1.8rem;
@@ -18,7 +19,9 @@ function BlogArticles() {
       {articles
         .sort((a, b) => b.id - a.id)
         .map((article) => (
-          <BlogItem article={article} key={article.id} />
+          <Fade triggerOnce direction="up">
+            <BlogItem article={article} key={article.id} />
+          </Fade>
         ))}
     </ArticleBox>
   );

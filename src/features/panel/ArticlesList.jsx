@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useArticles } from "../articles/useArticles";
 import TableArticlesList from "./TableArticlesList";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 const StyledList = styled.div``;
 

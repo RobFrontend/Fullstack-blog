@@ -7,6 +7,7 @@ import { useUser } from "../features/login/useUser";
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Zoom } from "react-awesome-reveal";
 
 const StyledPanel = styled.article`
   display: grid;
@@ -33,7 +34,11 @@ function Panel() {
         {isOpen ? "Close form" : "Add Article"}
       </Button>
 
-      {isOpen ? <ArticleForm /> : null}
+      {isOpen ? (
+        <Zoom>
+          <ArticleForm />
+        </Zoom>
+      ) : null}
       <ArticlesList />
     </StyledPanel>
   );

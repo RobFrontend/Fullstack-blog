@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 import Headroom from "react-headroom";
+import { Zoom } from "react-awesome-reveal";
 
 const StyledAppLayout = styled.div`
   /* height: 100vh; */
@@ -29,7 +30,9 @@ function AppLayout() {
       </Headroom>
       <Main>
         <Container>
-          <Outlet />
+          <Zoom triggerOnce>
+            <Outlet />
+          </Zoom>
         </Container>
       </Main>
     </StyledAppLayout>
