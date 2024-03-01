@@ -3,10 +3,15 @@ import Heading from "../../ui/Heading";
 
 const Article = styled.div`
   display: grid;
-  background-color: var(--color-background);
+  backdrop-filter: blur(5px);
   padding: 1.8rem;
+`;
+
+const Blured = styled.div`
+  background-color: var(--color-background);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
+  overflow: hidden;
 `;
 
 const RevText = styled.p`
@@ -56,25 +61,27 @@ function BlogItem({ article }) {
   } = article;
 
   return (
-    <Article
+    <Blured
       style={{
-        background: `linear-gradient(to bottom right, rgb(221, 222, 223), rgb(221, 222, 223), rgba(221, 222, 223, 0.7)), url(${image})`,
+        background: `linear-gradient(to bottom right, rgb(221, 222, 223), rgb(221, 222, 223), rgba(221, 222, 223, 0.5)), url(${image})`,
         backgroundSize: `cover`,
         backgroundPosition: "center",
         backdropFilter: "blur(5px)",
       }}
     >
-      <Heading as="h2">{title}</Heading>
-      <Grid2Cols>
-        <RevText>{articleText}</RevText>
+      <Article>
+        <Heading as="h2">{title}</Heading>
+        <Grid2Cols>
+          <RevText>{articleText}</RevText>
 
-        <Img src={image} />
-      </Grid2Cols>
-      <Grid2Cols>
-        <Heading as="h3">Publishing: {publisher}</Heading>
-        <PostTime>{date.slice(0, 10)}</PostTime>
-      </Grid2Cols>
-    </Article>
+          <Img src={image} />
+        </Grid2Cols>
+        <Grid2Cols>
+          <Heading as="h3">Publishing: {publisher}</Heading>
+          <PostTime>{date.slice(0, 10)}</PostTime>
+        </Grid2Cols>
+      </Article>
+    </Blured>
   );
 }
 

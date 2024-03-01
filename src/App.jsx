@@ -7,6 +7,7 @@ import PageNotFount from "./pages/PageNotFount";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Login from "./pages/Login";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,33 @@ function App() {
           </Route>
           <Route path="*" element={<PageNotFount />} />
         </Routes>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            // Define default options
+            className: "",
+            duration: 5000,
+            style: {
+              background: "#141522",
+              color: "#f9f6ee",
+              fontSize: "18px",
+              marginTop: "84px",
+            },
+
+            // Default options for specific types
+            success: {
+              duration: 3000,
+              theme: {
+                primary: "green",
+                secondary: "black",
+              },
+            },
+          }}
+        />
       </BrowserRouter>
     </QueryClientProvider>
   );

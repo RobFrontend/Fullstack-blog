@@ -44,6 +44,7 @@ function ArticleForm() {
             id="title"
             placeholder="title..."
             {...register("title")}
+            required
           />
         </FormRow>
         <FormRow>
@@ -53,6 +54,7 @@ function ArticleForm() {
             id="articleText"
             placeholder="text..."
             {...register("articleText")}
+            required
           />
         </FormRow>
         <FormRow>
@@ -62,6 +64,7 @@ function ArticleForm() {
             id="publisher"
             placeholder="publisher..."
             {...register("publisher")}
+            required
           />
         </FormRow>
         <FormRow>
